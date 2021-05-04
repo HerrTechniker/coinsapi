@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
-    public Economy eco = null;
+    public static Economy eco = null;
     private final String prefix = "§7[§6CoinSystem§7] §r";
 
     @Override
@@ -38,11 +38,13 @@ public class Main extends JavaPlugin {
         MySQL.createCoins();
         MySQL.createCoinsNameFetcher();
 
+        /*
         if (setupEconomy()) {
             System.out.println("[CoinsAPI] Vault was found!");
         }else {
             System.out.println("[CoinsAPI] Please install Vault to use CoinsAPI!");
         }
+         */
 
         getCommand("coins").setExecutor(new Coins_Commands(this));
 
@@ -77,7 +79,7 @@ public class Main extends JavaPlugin {
             return false;
         }
         eco = rsp.getProvider();
-        return eco != null;
+        return (eco != null);
     }
 
     public Economy getEco() {return eco;}
