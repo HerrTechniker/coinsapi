@@ -14,7 +14,7 @@ public class JoinListener implements Listener {
         if (!MySQLManager.hasCoins(player.getUniqueId().toString())) {
             MySQLManager.setCoins(player.getUniqueId().toString(), "0");
         }
-        if (MySQLManager.hasNamefetcherEntry(player.getUniqueId().toString())) {
+        if (!MySQLManager.hasNamefetcherEntry(player.getUniqueId().toString())) {
             MySQLManager.setPlayerNamefetcher(player.getUniqueId().toString(), player.getName());
         }
     }
