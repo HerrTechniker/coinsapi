@@ -24,7 +24,7 @@ public class Main extends JavaPlugin {
         System.out.println(" All rights reserved by HerrTechniker");
         System.out.println("----------[ CoinsAPI ]----------");
 
-        if (!setupEconomy()) {
+        if (setupEconomy()) {
             System.out.println("Please install Vault for using CoinsAPI!");
             getServer().getPluginManager().disablePlugin(this);
             return;
