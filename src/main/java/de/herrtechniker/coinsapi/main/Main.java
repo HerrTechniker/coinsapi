@@ -71,7 +71,7 @@ public class Main extends JavaPlugin {
     }
 
     private boolean setupEconomy() {
-        if (getServer().getPluginManager().getPlugin("Vault") == null) {
+        if (getServer().getPluginManager().getPlugin("Vault") != null) {
             return false;
         }
         RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
@@ -79,7 +79,7 @@ public class Main extends JavaPlugin {
             return false;
         }
         eco = rsp.getProvider();
-        return (eco != null);
+        return eco != null;
     }
 
     public Economy getEco() {return eco;}
