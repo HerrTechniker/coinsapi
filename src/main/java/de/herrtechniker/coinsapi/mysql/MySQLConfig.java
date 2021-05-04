@@ -11,6 +11,8 @@ import java.io.IOException;
 
 public class MySQLConfig {
 
+    private final String PATH = "mysql.";
+
     public File mysqlFile;
     public final File dataFolder;
     public FileConfiguration configuration;
@@ -29,11 +31,11 @@ public class MySQLConfig {
 
                 this.configuration.load(this.mysqlFile);
 
-                configuration.set("HOST", "localhost");
-                configuration.set("PORT", "3306");
-                configuration.set("DATABASE", "database");
-                configuration.set("USER", "root");
-                configuration.set("PASSWORD", "password");
+                configuration.set(PATH + "HOST", "localhost");
+                configuration.set(PATH + "PORT", "3306");
+                configuration.set(PATH + "DATABASE", "database");
+                configuration.set(PATH + "USER", "root");
+                configuration.set(PATH + "PASSWORD", "password");
 
                 this.configuration.save(this.mysqlFile);
             }
@@ -52,11 +54,11 @@ public class MySQLConfig {
             e.printStackTrace();
         }
 
-        MySQL.HOST = configuration.getString("HOST");
-        MySQL.PORT = configuration.getString("PORT");
-        MySQL.DATABASE = configuration.getString("DATABASE");
-        MySQL.USER = configuration.getString("USER");
-        MySQL.PASSWORD = configuration.getString("PASSWORD");
+        MySQL.HOST = configuration.getString(PATH + "HOST");
+        MySQL.PORT = configuration.getString(PATH + "PORT");
+        MySQL.DATABASE = configuration.getString(PATH + "DATABASE");
+        MySQL.USER = configuration.getString(PATH + "USER");
+        MySQL.PASSWORD = configuration.getString(PATH + "PASSWORD");
     }
 
 }
