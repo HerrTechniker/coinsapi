@@ -128,4 +128,22 @@ public class MySQLManager {
     public static void setPlayerNamefetcher(String uuid, String name) {
         MySQL.update("INSERT INTO namefetcher (uuid,name) VALUES ('" + uuid + "','" + name + "')");
     }
+
+    /*
+    *
+    *
+    * Namefetcher has entry
+    *
+    *
+    * */
+
+    public static boolean hasNamefetcherEntry(String uuid) {
+        ResultSet resultSet = MySQL.getResult("SELECT * FROM namefetcher WHERE uuid='" + uuid + "'");
+        try {
+            return resultSet.next();
+        }catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
 }
