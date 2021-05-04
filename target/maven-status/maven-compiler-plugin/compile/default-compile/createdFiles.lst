@@ -1,0 +1,13 @@
+de\herrtechniker\coinsapi\exception\PlayerNoCoinsException.class
+de\herrtechniker\coinsapi\exception\PlayerNotFoundException.class
+de\herrtechniker\coinsapi\mysql\MySQLManager.class
+de\herrtechniker\coinsapi\commands\Coins_Commands.class
+de\herrtechniker\coinsapi\api\ResetCoins.class
+de\herrtechniker\coinsapi\api\RemoveCoins.class
+de\herrtechniker\coinsapi\main\Main.class
+de\herrtechniker\coinsapi\listener\JoinListener.class
+de\herrtechniker\coinsapi\api\CoinsAPI.class
+de\herrtechniker\coinsapi\mysql\MySQL.class
+de\herrtechniker\coinsapi\mysql\MySQLConfig.class
+de\herrtechniker\coinsapi\api\SetCoins.class
+de\herrtechniker\coinsapi\api\AddCoins.class
