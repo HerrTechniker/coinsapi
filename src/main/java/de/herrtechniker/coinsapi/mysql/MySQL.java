@@ -15,7 +15,7 @@ public class MySQL {
         if (!isConnected()) {
             try {
                 connection = DriverManager.getConnection("jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE + "?autoReconnect=true", USER, PASSWORD);
-                System.out.println("[LanguageAPI] MySQL connected ");
+                System.out.println("[CoinsAPI] MySQL connected ");
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
@@ -26,7 +26,7 @@ public class MySQL {
         if (isConnected()) {
             try {
                 connection.close();
-                System.out.println("[LanguageAPI] MySQL disconnected ");
+                System.out.println("[CoinsAPI] MySQL disconnected ");
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
