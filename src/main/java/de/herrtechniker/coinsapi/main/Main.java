@@ -71,14 +71,19 @@ public class Main extends JavaPlugin {
     }
 
     private boolean setupEconomy() {
-        if (Bukkit.getPluginManager().getPlugin("Vault") == null) {
+        System.out.println("1");
+        if (Bukkit.getPluginManager().getPlugin("Vault") != null) {
+            System.out.println("Vault Error");
             return false;
         }
+        System.out.println("2");
         RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
         if (rsp == null) {
+            System.out.println("rsp == null");
             return false;
         }
         eco = rsp.getProvider();
+        System.out.println("eco != null");
         return eco != null;
     }
 
