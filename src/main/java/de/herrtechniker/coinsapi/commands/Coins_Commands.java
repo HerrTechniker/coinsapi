@@ -76,7 +76,7 @@ public class Coins_Commands implements CommandExecutor {
                                 }
                             }else {
                                 if (plugin.getEco().hasAccount(offlinePlayer)) {
-                                    String coins = CoinsAPI.getCoins(target.getUniqueId().toString());
+                                    String coins = CoinsAPI.getCoins(offlinePlayer.getUniqueId().toString());
                                     player.sendMessage(plugin.getPrefix() + "§7The Player §e" + offlinePlayer.getName() + "§7 has §e" + coins + " §7coins.");
                                 }else {
                                     player.sendMessage(plugin.getPrefix() + "§7The Player §e" + offlinePlayer.getName() + "§7 has §e0 §7coins.");
@@ -145,7 +145,7 @@ public class Coins_Commands implements CommandExecutor {
                                             }
                                             player.sendMessage(plugin.getPrefix() + "§7You have successful removed §e" + args[2] + " §7Coins from §e" + offlinePlayer.getName() + "§7.");
                                         }else {
-                                            player.sendMessage(plugin.getPrefix() + "§cThe Player §e" + target.getName() + " §chas not enough Coins to remove!");
+                                            player.sendMessage(plugin.getPrefix() + "§cThe Player §e" + offlinePlayer.getName() + " §chas not enough Coins to remove!");
                                         }
                                     }else {
                                         player.sendMessage(plugin.getPrefix() + "§cYou can´t remove §e" + args[2] + " §ccoins from the Player §e" + offlinePlayer.getName() + "§c, because he has no coins");
@@ -273,7 +273,7 @@ public class Coins_Commands implements CommandExecutor {
                                 }
                             }else {
                                 if (plugin.getEco().hasAccount(offlinePlayer)) {
-                                    String coins = CoinsAPI.getCoins(target.getUniqueId().toString());
+                                    String coins = CoinsAPI.getCoins(offlinePlayer.getUniqueId().toString());
                                     player.sendMessage(plugin.getPrefix() + "§7Der Spieler §e" + offlinePlayer.getName() + "§7 hat §e" + coins + " §7Coins.");
                                 }else {
                                     player.sendMessage(plugin.getPrefix() + "§7Der Spieler §e" + offlinePlayer.getName() + "§7 hat §e0 §7Coins.");
@@ -299,7 +299,7 @@ public class Coins_Commands implements CommandExecutor {
                                         double coins = plugin.getEco().getBalance(offlinePlayer);
                                         plugin.getEco().withdrawPlayer(offlinePlayer, coins);
                                         MySQLManager.changeCoins(offlinePlayer.getUniqueId().toString(), "0");
-                                    } else {
+                                    }else {
                                         plugin.getEco().createPlayerAccount(offlinePlayer);
                                     }
                                     player.sendMessage(plugin.getPrefix() + "§7Du hast erfolgreich die Coins vom Spieler §e" + offlinePlayer.getName() + "§7zurückgesetzt.");
