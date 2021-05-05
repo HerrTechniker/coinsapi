@@ -1,7 +1,7 @@
 package de.herrtechniker.coinsapi.mysql;
 
 
-import de.herrtechniker.coinsapi.main.Main;
+import de.herrtechniker.coinsapi.main.CoinsAPI_Main;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -17,7 +17,7 @@ public class MySQLConfig {
     public final File dataFolder;
     public FileConfiguration configuration;
 
-    public MySQLConfig(Main plugin) {this.dataFolder = plugin.getDataFolder();}
+    public MySQLConfig(CoinsAPI_Main plugin) {this.dataFolder = plugin.getDataFolder();}
 
     public void setStandard() {
         this.mysqlFile = new File(this.dataFolder, "mysql.yml");

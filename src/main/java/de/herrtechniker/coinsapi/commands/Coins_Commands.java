@@ -2,7 +2,7 @@ package de.herrtechniker.coinsapi.commands;
 
 import de.herrtechniker.api.LanguageAPI;
 import de.herrtechniker.coinsapi.api.CoinsAPI;
-import de.herrtechniker.coinsapi.main.Main;
+import de.herrtechniker.coinsapi.main.CoinsAPI_Main;
 import de.herrtechniker.coinsapi.mysql.MySQLManager;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
@@ -16,9 +16,9 @@ import java.util.Objects;
 
 public class Coins_Commands implements CommandExecutor {
 
-    private Main plugin;
+    private CoinsAPI_Main plugin;
 
-    public Coins_Commands(Main plugin) {this.plugin = plugin;}
+    public Coins_Commands(CoinsAPI_Main plugin) {this.plugin = plugin;}
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {

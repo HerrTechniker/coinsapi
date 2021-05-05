@@ -2,7 +2,7 @@ package de.herrtechniker.coinsapi.api;
 
 import de.herrtechniker.coinsapi.exception.PlayerNoCoinsException;
 import de.herrtechniker.coinsapi.exception.PlayerNotFoundException;
-import de.herrtechniker.coinsapi.main.Main;
+import de.herrtechniker.coinsapi.main.CoinsAPI_Main;
 import de.herrtechniker.coinsapi.mysql.MySQLManager;
 
 public class CoinsAPI {
@@ -11,7 +11,7 @@ public class CoinsAPI {
         try {
             try {
                 MySQLManager.changeCoins(uuid, coins);
-                Main.getPlugin(Main.class).getEco().withdrawPlayer(uuid, Double.parseDouble(coins));
+                CoinsAPI_Main.getPlugin(CoinsAPI_Main.class).getEco().withdrawPlayer(uuid, Double.parseDouble(coins));
             }catch (PlayerNoCoinsException e) {
                 System.out.println(e.toString());
             }
@@ -24,8 +24,8 @@ public class CoinsAPI {
     public static void resetCoins(String uuid) {
         try {
             MySQLManager.setCoins(uuid, "0");
-            double currentCoins = Main.getPlugin(Main.class).getEco().getBalance(uuid);
-            Main.getPlugin(Main.class).getEco().withdrawPlayer(uuid, currentCoins);
+            double currentCoins = CoinsAPI_Main.getPlugin(CoinsAPI_Main.class).getEco().getBalance(uuid);
+            CoinsAPI_Main.getPlugin(CoinsAPI_Main.class).getEco().withdrawPlayer(uuid, currentCoins);
         }catch (NumberFormatException e) {
             e.printStackTrace();
         }
@@ -34,9 +34,9 @@ public class CoinsAPI {
     public static void setCoins(String uuid, String coins) {
         try {
             MySQLManager.setCoins(uuid, coins);
-            double currentCoins = Main.getPlugin(Main.class).getEco().getBalance(uuid);
-            Main.getPlugin(Main.class).getEco().withdrawPlayer(uuid, currentCoins);
-            Main.getPlugin(Main.class).getEco().depositPlayer(uuid, Double.parseDouble(coins));
+            double currentCoins = CoinsAPI_Main.getPlugin(CoinsAPI_Main.class).getEco().getBalance(uuid);
+            CoinsAPI_Main.getPlugin(CoinsAPI_Main.class).getEco().withdrawPlayer(uuid, currentCoins);
+            CoinsAPI_Main.getPlugin(CoinsAPI_Main.class).getEco().depositPlayer(uuid, Double.parseDouble(coins));
         }catch (NumberFormatException e) {
             System.out.println(e.toString());
         }
@@ -51,7 +51,7 @@ public class CoinsAPI {
             }else {
                 MySQLManager.changeCoins(uuid, String.valueOf(toAddCoins + currentCoinsMySQL));
             }
-            Main.getPlugin(Main.class).getEco().depositPlayer(uuid, Double.parseDouble(coins));
+            CoinsAPI_Main.getPlugin(CoinsAPI_Main.class).getEco().depositPlayer(uuid, Double.parseDouble(coins));
         }catch (NumberFormatException e) {
             e.printStackTrace();
         }
