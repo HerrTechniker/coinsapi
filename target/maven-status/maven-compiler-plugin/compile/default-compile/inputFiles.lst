@@ -1,5 +1,6 @@
 E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\mysql\MySQL.java
 E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\commands\Coins_Commands.java
+E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\main\CoinsAPI_Main.java
 E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\exception\PlayerNoCoinsException.java
 E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\api\CoinsAPI.java
 E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\mysql\MySQLConfig.java
@@ -8,6 +9,5 @@ E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\exception
 E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\api\ResetCoins.java
 E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\api\SetCoins.java
 E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\api\AddCoins.java
-E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\main\Main.java
 E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\listener\JoinListener.java
 E:\Development\GitHub\CoinsAPI\src\main\java\de\herrtechniker\coinsapi\api\RemoveCoins.java

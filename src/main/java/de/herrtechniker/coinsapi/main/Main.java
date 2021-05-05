@@ -9,7 +9,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class CoinsAPI_Main extends JavaPlugin {
+public class Main extends JavaPlugin {
 
     public static Economy eco = null;
     private final String prefix = "§7[§6CoinSystem§7] §r";
