@@ -4,7 +4,9 @@ version: 1.0
 author: HerrTechniker
 depend:
   - Vault
-loadbefore: [Vault]
+
+loadbefore:
+  - Vault
 
 commands:
   coins:
