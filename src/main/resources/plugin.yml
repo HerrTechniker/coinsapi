@@ -2,7 +2,8 @@ name: CoinsAPI
 main: de.herrtechniker.coinsapi.main.Main
 version: 1.0
 author: HerrTechniker
-depend: [Vault]
+depend:
+  - Vault
 loadbefore: [Vault]
 
 commands:

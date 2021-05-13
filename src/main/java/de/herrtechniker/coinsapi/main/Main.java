@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
 
-    public static Economy eco = null;
+    public static Economy economy = null;
     private final String prefix = "§7[§6CoinSystem§7] §r";
 
     @Override
@@ -24,7 +24,7 @@ public class Main extends JavaPlugin {
         System.out.println(" All rights reserved by HerrTechniker");
         System.out.println("----------[ CoinsAPI ]----------");
 
-        if (setupEconomy()) {
+        if (!setupEconomy()) {
             System.out.println("Please install Vault for using CoinsAPI!");
             getServer().getPluginManager().disablePlugin(this);
             return;
@@ -71,23 +71,32 @@ public class Main extends JavaPlugin {
     }
 
     private boolean setupEconomy() {
+        RegisteredServiceProvider<Economy> economyProvider = getServer().getServicesManager().getRegistration(net.milkbowl.vault.economy.Economy.class);
+        if (economyProvider != null) {
+            economy = economyProvider.getProvider();
+        }
+
+        return (economy != null);
+        /*
         System.out.println("1");
-        if (Bukkit.getPluginManager().getPlugin("Vault") != null) {
+        if (Bukkit.getServer().getPluginManager().getPlugin("Vault") == null) {
             System.out.println("Vault Error");
             return false;
         }
         System.out.println("2");
-        RegisteredServiceProvider<Economy> rsp = getServer().getServicesManager().getRegistration(Economy.class);
+        RegisteredServiceProvider<Economy> rsp = Bukkit.getServer().getServicesManager().getRegistration(Economy.class);
         if (rsp == null) {
             System.out.println("rsp == null");
             return false;
         }
-        eco = rsp.getProvider();
+        economy = rsp.getProvider();
         System.out.println("eco != null");
-        return eco != null;
+        return economy != null;
+        */
     }
 
-    public Economy getEco() {return eco;}
+
+    public Economy getEconomy() {return economy;}
 
     public String getPrefix() {return prefix;}
 }

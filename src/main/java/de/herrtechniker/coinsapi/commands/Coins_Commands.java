@@ -17,14 +17,16 @@ import java.util.Objects;
 public class Coins_Commands implements CommandExecutor {
 
     private Main plugin;
+    private Economy economy = Main.getPlugin(Main.class).getEconomy();;
 
-    public Coins_Commands(Main plugin) {this.plugin = plugin;}
+    public Coins_Commands(Main plugin) {
+        this.plugin = plugin;
+    }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            Economy economy = plugin.getEco();
 
             /*
             *
@@ -401,7 +403,7 @@ public class Coins_Commands implements CommandExecutor {
                                     if (economy.hasAccount(offlinePlayer)) {
                                         double coins = economy.getBalance(offlinePlayer);
                                         economy.withdrawPlayer(offlinePlayer, coins);
-                                        plugin.getEco().depositPlayer(offlinePlayer, Integer.parseInt(args[2]));
+                                        plugin.getEconomy().depositPlayer(offlinePlayer, Integer.parseInt(args[2]));
                                         MySQLManager.changeCoins(offlinePlayer.getUniqueId().toString(), args[2]);
                                         player.sendMessage(plugin.getPrefix() + "§7Du hast erfolgreich dem Spieler §e" + offlinePlayer.getName() + " §7die Coins auf §e" + args[2] + "§7Coins gesetzt.");
                                     }
